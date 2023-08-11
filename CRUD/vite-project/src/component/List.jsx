@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
+import {Link} from "react-router-dom";
 
 const List = () => {
 
@@ -49,7 +50,7 @@ const List = () => {
                                            <td>{item['Qty']}</td>
                                            <td>{item['TotalPrice']}</td>
                                            <td>
-                                               <button className="btn btn-success btn-sm">Edit</button>
+                                               <Link to={"/update/"+item['_id']} className="btn btn-success btn-sm">Edit</Link>
                                                <button onClick={async ()=>{await onDelete(item['_id'])}} className="btn btn-danger btn-sm">Delete</button>
                                            </td>
                                        </tr>
